@@ -1,0 +1,15 @@
+to count the number of zeroes in the end of factorial of a number
+for example- 
+Input: n = 3
+Output: 0
+Explanation: 3! = 6, no trailing zero.
+here if we use the approach that we would e=divide each factorial number by 10 and count zeroes it wont work since it woul cause buffer overflow and even long long int wont be able to store the number of factorial, after almost 12! long long int couldnt store so we have to get a mathematical approach that is prime numbers. 10 is made up by prime numbers 2 and 5, each factorial have n=more number of 2 than 5 so if we calculate number of 5's in a programme it would be less time consuming. so we divide n by 5 again and again to get for better understanding visithttps://www.geeksforgeeks.org/count-trailing-zeroes-factorial-number/
+
+Solution- (C++)
+int ans=0;
+        while(n>0){
+            ans+=n/5;
+            n/=5;
+        }
+        return ans;
+     }

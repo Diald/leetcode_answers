@@ -1,0 +1,10 @@
+Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+Solution-
+n=len(nums)
+n=len(nums)
+temp=[]
+temp= nums[:n-k]
+del nums[:n-k]
+nums.extend(temp)
+print(nums)

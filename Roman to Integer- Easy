@@ -1,0 +1,15 @@
+Let's simplify it. To call the value of a key, we can type roman[key]. Example, roman["L"]. We can also put a variable in there. In the code, it's roman[s]. This variable is a string that we enter, aka the one to be evaluated. What tripped me up was the [i] after s. I figured out it's a parsing of the input string (of only one character) which is equal to the number of loops we've done. So if the string is VII and we're going through the loop for the first time, then it looks at the first character of the string, in this case V, which is a key in the dictionary and therefore has a value.
+
+It then checks if that value is lower than the value of the next key (assuming a valid input) in the string. If it is, subtract it from number. If not, add it to number.
+
+Sorry for the long comment, but it was a long and frustrating process of untangling this piece by piece, including why we run the for loop in range(len(s)-1, but it all came together eventually. For anyone wondering, it's because the last number will always be added, so we don't need to run it through the loop. Instead we just add "the value mapped to the key in the [-1] (aka last) position of the string". :)
+
+SOLUTION- 
+roman={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+        number=0
+        for i in range (len(s)-1):
+            if roman[s[i+1]]>roman[s[i]]:
+                number-=roman[s[i]]
+            else:
+                number+=roman[s[i]]
+        return number+roman[s[-1]]

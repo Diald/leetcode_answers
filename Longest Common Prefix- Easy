@@ -1,0 +1,25 @@
+given an array containing strings, we have to find the longest common word among the strings
+For example-
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+
+APPROACH- we first sorted the array so that if we just compare first and last string of the array it will give the common prefix, so we compared the first and last string by applying a for loop and if a word of them are equal it will be added to the result string. one error i got here was that here index number was out of range so we used  This error can happen if the two input strings (strs1 and strs2) have different lengths, and you try to access an index that is beyond the length of one of the strings.To fix this issue, you should ensure that both strs1 and strs2 have the same length before comparing characters at corresponding indices. One way to do this is by using the len() function to check if both strings have the same length.min_length = min(n, m)
+
+SOLUTION- 
+
+strs.sort()
+        n= len(strs)
+        strs1= strs[0]
+        strs2= strs[len(strs)-1]
+        min_length= min(len(strs1),len(strs2))
+        res=""
+        if (strs==[""]):
+            return ""
+        if (len(strs)==1):
+            return strs[0]
+        for i in range (min_length):
+            if(strs1[i]==strs2[i]):
+                res+=strs1[i]
+            else:
+                return res
+        return res

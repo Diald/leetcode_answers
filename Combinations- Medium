@@ -1,0 +1,17 @@
+Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
+here n is the total length of numbers the array can contain starting from 1 to n and k is the limit value of subsets the array should have. in these type of questions there is no doubt we use recursion, backtracking or iteration, i chose to do by bakctracking
+SOLUTION- 
+def backtrack(first=1, current=[]):
+            if len(current) == k:
+                output.append(current[:])
+                return
+            for i in range(first, n + 1):
+                current.append(i)
+                backtrack(i + 1, current)
+                current.pop()
+
+        output = []
+        backtrack()
+        return output
+
+vid tutorial- https://youtu.be/aXgNccfxlkA

@@ -1,0 +1,15 @@
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
+1. set is used to remove all the duplicate elements from the array. to convert an array into set. Set is ordered non repeating collection of elements. example of set are- {1,2,"apple","red"} it can have different datatypes too 
+Syntax- 
+x = set(nums)
+
+2. intersect method is like mathematical intersection method. it gives the common elements of both sets. note that only sets and it returns a set only. 
+x.intersect(y)
+
+3. Union method is also like mathematical union. it gives elements of the both sets, both unique and common elements. it also returns a set only. its syntax is- 
+x.union(y)
+
+        x= set(nums1)
+        y= set(nums2)
+        return list(x.intersection(y))

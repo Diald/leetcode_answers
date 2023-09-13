@@ -1,0 +1,20 @@
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.''' 
+the aim is to check if the string is pallindromw or not with a little twist that we hae to remove all spaces and commas and just have characters for that we used str.isalnum which only turns true for character values and filter(condition, string) in which condition is isalnum and were doing in string then we compare by 2 pointer method 
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+CODE- 
+
+def isPalindrome(self, s: str) -> bool:
+        start=0
+        s=''.join(filter(str.isalnum,s)).lower()
+        end= len(s)-1
+        while start<end:
+          if(s[start]!=s[end]):
+            return False
+          start+=1
+          end-=1
+        return True

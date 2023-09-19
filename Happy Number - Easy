@@ -1,0 +1,24 @@
+In each iteration of the loop:
+The a variable is updated by calling the numSquareSum function on its current value. This calculates the sum of the squares of its digits.
+The b variable is updated by calling the numSquareSum function twice on its current value. This simulates moving fast by two iterations.
+After each update of slow and fast, the code checks if slow is not equal to fast. If they are not equal, it continues to the next iteration of the loop.
+If slow is equal to fast, it means that the process has entered a cycle. In other words, the numbers in the sequence are repeating. At this point, the code breaks out of the loop.
+Finally, after breaking out of the loop, the code checks if slow is equal to 1. If it is, the original number n is considered a Happy number and the function returns True. Otherwise, it returns False.
+<----------------------------CODE-------------------------------->
+
+def numSquareSum(n):
+    squareSum = 0
+    while(n):
+        squareSum += (n % 10) * (n % 10)
+        n = int(n / 10)
+    return squareSum
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        a= n;
+        b= n;
+        while(True):
+            a= numSquareSum(a);
+            b = numSquareSum(numSquareSum(b));
+            if(a == b):
+                break;
+        return (a == 1);

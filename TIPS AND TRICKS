@@ -1,0 +1,5 @@
+The line of code m[word] = m.get(word, 0) + 1 is typically used in programming languages like Python or JavaScript to count the frequency of words in a text or document
+m={}
+m[word]= m.get(word,0)+1
+
+it is used to remove duplicates. it is a dictionary to get values, the values in a disctionary is unique so it returns 0 if the word already exists 

@@ -13,3 +13,6 @@ x.union(y)
         x= set(nums1)
         y= set(nums2)
         return list(x.intersection(y))
+
+to reduce memory space we can also do 
+        return list(set(nums1).intersection(set(nums2)))

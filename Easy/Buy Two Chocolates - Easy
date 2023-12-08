@@ -12,3 +12,12 @@ class Solution:
         if ans>=0:
             return ans
         return money
+
+
+# Better Solution 
+        min1 = min(prices)
+        prices.pop(prices.index(min1))
+        min2 = min(prices)
+        if money-(min1 + min2)>=0:
+            return (money -(min1 + min2))
+        return money
